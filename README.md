@@ -40,7 +40,7 @@ O sistema tem suporte diferente para **usuários não cadastrados** e **usuário
 
 #### Usuários não cadastrados
 
-Usuários não cadastrados possuem acesso aos dados dos eventos e para isso é nescessário uma busca no sistema fornecendo os dados :
+Usuários não cadastrados possuem acesso aos dados dos eventos e para isso é nescessário uma busca no sistema fornecendo :
 -   Data de início
 -   Data de término
 -   Estado
