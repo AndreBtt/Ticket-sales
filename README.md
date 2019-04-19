@@ -51,12 +51,12 @@ Uma lista é fornecida para o usuário com os eventos disponíveis no período (
 A lista possui o seguinte formato :
 -   Nome do evento
 -   Apresentações do evento
-    -   Código da aprensetação
-    -   Data da aprensetação
-    -   Horário da aprensetação
+    -   Código da apresentação
+    -   Data da apresentação
+    -   Horário da apresentação
     -   Preço do ingresso   
     -   Quantidade de ingressos disponíveis   
-    -   Número da sala onde ocorrerá a aprensetação       
+    -   Número da sala onde ocorrerá a apresentação
 
 Para a compra do ingresso é nescessário o cadastro no sistema.
 
@@ -90,12 +90,12 @@ Uma vez cadastrado o usuário pode :
     -   Cidade onde vai ocorrer
     -   Classe e faixa etária
     -   Apresentações
-        -   Código da aprensetação
-        -   Data da aprensetação
-        -   Horário da aprensetação
+        -   Código da apresentação
+        -   Data da apresentação
+        -   Horário da apresentação
         -   Preço do ingresso
         -   Quantidade de ingressos disponíveis
-        -   Código da sala onde ocorrerá a aprensetação     
+        -   Código da sala onde ocorrerá a apresentação     
 
 3.  **Alterar evento**
 
