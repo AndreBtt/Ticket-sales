@@ -27,7 +27,7 @@ Cada evento possui as seguintes características :
 -   Cidade em que ocorre
 -   No mínimo **uma** e no máximo **dez** apresentações
 
-Para cada aprensentação exibida em um evento as seguintes caracteristicas devem ser especificadas :
+Para cada aprensentação exibida em um evento as seguintes caracteristicas são especificadas :
 -   Código único da apresentação
 -   Data
 -   Horário
