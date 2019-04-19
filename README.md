@@ -71,7 +71,7 @@ Para se cadastrar o usuário deve fornecer os seguintes dados :
 
 Após o cadastro o usuário pode acessar sua conta fornecendo seu CPF e senha.
 
-Uma vez cadastrado o usuário pode **comprar ingressos**, **cadastrar, descadastrar e editar eventos**, **obter informação sobre um evento criado** e **descadastrar conta**, cada usuário pode ser responsável por no máximo **cinco** eventos.
+Uma vez cadastrado o usuário pode :
 
 1.  **Compra de ingressos**
 
@@ -83,7 +83,7 @@ Uma vez cadastrado o usuário pode **comprar ingressos**, **cadastrar, descadast
 
 2.  #### **Cadastrar evento**
 
-    Para a criação de um novo evento o usuário deve ser responsável por menos de cinco eventos e fornecer as seguintes informações :
+    Para a criação de um novo evento o usuário deve ser responsável por **menos de cinco eventos** e fornecer as seguintes informações :
     -   Código do evento
     -   Nome do evento
     -   Estado onde vai ocorrer
