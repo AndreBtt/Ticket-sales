@@ -7,13 +7,6 @@ O grupo responsável por desenvolver é constituido pelos membros :
 -   **Thiago Veras Machado**
 -   **Luan Pignata**
 
-## Tabela de Atividades
-
-- [Descrição do Projeto](#descrição-do-Projeto)
-- [Plano de Projeto](#)
-- [Planos de iterações](#)
-- [....](#)
-
 ## Descrição do Projeto
 
 Sistema de venda de ingressos e criação de eventos.
@@ -26,13 +19,13 @@ O sitema tem suporte para quatro tipos diferentes de eventos:
 -   Show nacional
 -   Show internacional
 
-Cada evento possui :
+Cada evento possui as seguintes características :
 -   Código único do evento
 -   Nome
 -   Classe e faixa etária
 -   Estado em que ocorre
 -   Cidade em que ocorre
--   No mínimo `uma` e no máximo `dez` apresentações
+-   No mínimo **uma** e no máximo **dez** apresentações
 
 Para cada aprensentação exibida em um evento as seguintes caracteristicas devem ser especificadas :
 -   Código único da apresentação
@@ -43,11 +36,11 @@ Para cada aprensentação exibida em um evento as seguintes caracteristicas deve
 
 ### Usuários
 
-O sistema tem suporte diferente para **usuários cadastrados** e **usuários não cadastrados**
+O sistema tem suporte diferente para **usuários não cadastrados** e **usuários cadastrados**
 
 #### Usuários não cadastrados
 
-Usuários não cadastrados possuem acesso aos dados dos eventos, para isso é nescessario uma busca no sistema fornecendo os dados :
+Usuários não cadastrados possuem acesso aos dados dos eventos e para isso é nescessário uma busca no sistema fornecendo os dados :
 -   Data de início
 -   Data de término
 -   Estado
@@ -78,7 +71,7 @@ Para se cadastrar o usuário deve fornecer os seguintes dados :
 
 Após o cadastro o usuário pode acessar sua conta fornecendo seu CPF e senha.
 
-Uma vez cadastrado o usuário pode **comprar ingressos**, **cadastrar, descadastrar e editar eventos**, **obter informação sobre um evento criado** e **descadastrar conta**, cada usuário pode ser responsável por no máximo `cinco` eventos.
+Uma vez cadastrado o usuário pode **comprar ingressos**, **cadastrar, descadastrar e editar eventos**, **obter informação sobre um evento criado** e **descadastrar conta**, cada usuário pode ser responsável por no máximo **cinco** eventos.
 
 1.  **Compra de ingressos**
 
@@ -86,7 +79,7 @@ Uma vez cadastrado o usuário pode **comprar ingressos**, **cadastrar, descadast
     -   Código da apresentação
     -   Quantidade de ingressos
     
-    O sistema verificará se existe a quantidade de ingressos desejada para a apresentação e retornará uma `lista com os códigos dos ingressos`.
+    O sistema verificará se existe a quantidade de ingressos desejada para a apresentação e retornará uma lista com os códigos dos ingressos.
 
 2.  #### **Cadastrar evento**
 
@@ -122,11 +115,11 @@ Uma vez cadastrado o usuário pode **comprar ingressos**, **cadastrar, descadast
 
 5. **Informação sobre um evento criado**
 
-    O usuário responsável por um evento pode obter requisitar informações sobre seu evento.
+    O usuário responsável por um evento pode requisitar informações sobre seu evento.
 
     Para obter informações é nescessário fornecer o código do evento.
 
-    Uma lita é fornecida para o usuário com os seguintes dados de todoas as apresentaçoes do evento :
+    Uma lita é fornecida para o usuário com os seguintes dados de todas as apresentações do evento :
     -   Código da apresentação
     -   Quantidade de ingressos vendidos
     -   CPF de cada comprador
