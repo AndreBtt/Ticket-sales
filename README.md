@@ -73,7 +73,7 @@ Após o cadastro o usuário pode acessar sua conta fornecendo seu CPF e senha.
 
 Uma vez cadastrado o usuário pode :
 
-1.  **Compra de ingressos**
+1.  **Comprar ingressos**
 
     Para a compra dos ingressos o usuário deve fornecer os seguintes dados :
     -   Código da apresentação
@@ -113,7 +113,7 @@ Uma vez cadastrado o usuário pode :
 
     Para descadastrar um evento seu código deve ser fornecido, todos os dados do evento serão deletados.
 
-5. **Informação sobre um evento criado**
+5. **Requistar informações sobre um evento**
 
     O usuário responsável por um evento pode requisitar informações sobre seu evento.
 
