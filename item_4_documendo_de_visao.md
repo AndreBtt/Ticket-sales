@@ -14,7 +14,7 @@ Os visitantes são as pessoas que entram no site e apenas olham os anúncios, ma
 
 ## Necessidades e Funcionalidades
 
-O usuário deve conseguir cadastrar um usuário, descadastrar um usuário, cadastrar um evento, alterar um evento, requistar informações sobre um evento e comprar ingresso.
+O usuário deve conseguir cadastrar um usuário, descadastrar um usuário, cadastrar um evento, alterar um evento, apagar um evento, requistar informações sobre um evento e comprar ingresso.
 
 O sistema tem suporte diferente para **usuários não cadastrados** e **usuários cadastrados**
 
