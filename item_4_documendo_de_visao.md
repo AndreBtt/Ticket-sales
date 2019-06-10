@@ -4,7 +4,7 @@ O projeto consiste em um sistema de compra e venda de ingressos para eventos dos
 
 ## Stakeholders
 
-Para esse sistema, temos dois Stakeholders, os anunciantes, os clientes e os visitantes.
+Para esse sistema, temos três Stakeholders, os anunciantes, os clientes e os visitantes.
 
 Os anunciantes são responsáveis por anunciar os eventos. Ele pode especificar o tipo do evento (show, esporte), localização, preço, horário, dentre vários outros recursos.
 
@@ -14,7 +14,7 @@ Os visitantes são as pessoas que entram no site e apenas olham os anúncios, ma
 
 ## Necessidades e Funcionalidades
 
-O usuário deve conseguir cadastrar um usuário, descadastrar um usuário, cadastrar um evento, alterar um evento, requistar informações sobre um evento e comprar ingresso.
+O usuário deve conseguir cadastrar um usuário, descadastrar um usuário, cadastrar um evento, alterar um evento, apagar um evento, requistar informações sobre um evento e comprar ingresso.
 
 O sistema tem suporte diferente para **usuários não cadastrados** e **usuários cadastrados**
 
