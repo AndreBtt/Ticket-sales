@@ -92,6 +92,8 @@ Uma vez cadastrado o usuário pode :
     -   Cidade onde vai ocorrer
     -   Classe e faixa etária
     -   Tipo do evento
+    -   Data de início
+    -   Data de fim
     -   Apresentações
         -   Código da apresentação
         -   Data da apresentação
