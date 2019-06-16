@@ -96,6 +96,11 @@ input:focus ~ .bar:before {
   display: none;
 }
 
+.feature:hover {
+  color: #43b699;
+  cursor: pointer;
+}
+
 @media(min-width:1000px) {
     header .header-content .inner {
       margin-right: auto;

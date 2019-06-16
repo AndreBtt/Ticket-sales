@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/animate.min.css" />
-    <!-- <link rel="stylesheet" href="/css/main.css" /> -->
     <link rel="stylesheet" href="/css/home.css" />
   </head>
+
   <body>
     <header>
         <div class="header-content">
@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 text-center">
                     <div onclick="display(1)" class="feature">
-                        <img src="/img/icons/rules.png" width="70" height="70"/>
+                        <img src="" width="70" height="70"/>
                         <h3>Buscar evento</h3>
                         <p class="text-muted">Veja os eventos da sua região</p>
                     </div>
@@ -32,7 +32,7 @@
 
                 <div class="col-lg-4 col-md-4 text-center">
                     <div onclick="display(2)" class="feature">
-                        <img src="/img/icons/facebook.png" width="70" height="70"/>
+                        <img src="" width="70" height="70"/>
                         <h3>Cadastrar evento</h3>
                         <p class="text-muted">Seja dono do seu próprio evento</p>
                     </div>
@@ -40,7 +40,7 @@
                 
                 <div class="col-lg-4 col-md-4 text-center">
                     <div onclick="display(3)" class="feature">
-                        <img src="/img/icons/author.png" width="70" height="70"/>
+                        <img src="" width="70" height="70"/>
                         <h3>Comprar ingresso</h3>
                         <p class="text-muted">Garanta seu ingresso</p>
                     </div>
@@ -55,31 +55,27 @@
                 <div class="row col-md-8 col-md-offset-2">
                     
                     <div class="group">
-                        <input autocomplete="off" id="teamName" class="text-center" type="text" placeholder="Estado"/>
+                        <input autocomplete="off" id="estado1" class="text-center" type="text" placeholder="Estado"/>
                         <div class="bar"></div>
-                        <span id="teamRequire" class="require-text">*insira um nome para o time</span>
                     </div>
                     
                     <div class="group">
-                        <input autocomplete="off" id="teamName" class="text-center" type="text" placeholder="Cidade"/>
+                        <input autocomplete="off" id="cidade1" class="text-center" type="text" placeholder="Cidade"/>
                         <div class="bar"></div>
-                        <span id="teamRequire" class="require-text">*insira um nome para o time</span>
                     </div>
 
                     <div class="group">
-                        <input autocomplete="off" id="teamName" class="text-center" type="text" placeholder="Data inicio"/>
+                        <input autocomplete="off" id="data_inicio1" class="text-center" type="text" placeholder="Data inicio"/>
                         <div class="bar"></div>
-                        <span id="teamRequire" class="require-text">*insira um nome para o time</span>
                     </div>
 
                     <div class="group">
-                        <input autocomplete="off" id="teamName" class="text-center" type="text" placeholder="Data fim"/>
+                        <input autocomplete="off" id="data_fim1" class="text-center" type="text" placeholder="Data fim"/>
                         <div class="bar"></div>
-                        <span id="teamRequire" class="require-text">*insira um nome para o time</span>
                     </div>
 
                     <div class="col-md-12 text-center" style="margin-top: 20px;">
-                        <button onclick="createTeam()" class="btn btn-primary btn-block btn-lg" >Buscar</button>
+                        <button onclick="buscar()" class="btn btn-primary btn-block btn-lg" >Buscar</button>
                     </div>
                     
                 </div>
@@ -167,10 +163,20 @@
             </div>
     </section>
 
+    <section class="sessaao" id="4">
+        <div class="container">
+            <div class="row col-md-12">
+                    <ul id="listaEventos" class="text-center" style="list-style-type:none;">
+                    </ul>
+            </div>
+        </div>
+    </section>
+
     <!--scripts loaded here -->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/jquery.easing.min.js"></script>
     <script src="/js/home.js"></script>
   </body>
+
 </html>
