@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Computsal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/animate.min.css" />
+    <!-- <link rel="stylesheet" href="/css/main.css" /> -->
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+    <header>
+        <div class="header-content">
+            <div class="inner">
+                <h1>Venda de ingressos</h1>
+                <h4>Trabalho de engenharia de software</h4>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 text-center">
+                    <div onclick="display(1)" class="feature">
+                        <img src="/img/icons/rules.png" width="70" height="70"/>
+                        <h3>Buscar evento</h3>
+                        <p class="text-muted">Veja os eventos da sua região</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 text-center">
+                    <div onclick="display(2)" class="feature">
+                        <img src="/img/icons/facebook.png" width="70" height="70"/>
+                        <h3>Cadastrar evento</h3>
+                        <p class="text-muted">Seja dono do seu próprio evento</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-4 text-center">
+                    <div onclick="display(3)" class="feature">
+                        <img src="/img/icons/author.png" width="70" height="70"/>
+                        <h3>Comprar ingresso</h3>
+                        <p class="text-muted">Garanta seu ingresso</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="sessao" id="1">
+            <div class="container">
+                <div class="row col-md-8 col-md-offset-2">
+                    
+                    <div class="group">
+                        <input autocomplete="off" id="teamName" class="text-center" type="text" placeholder="Estado"/>
+                        <div class="bar"></div>
+                        <span id="teamRequire" class="require-text">*insira um nome para o time</span>
+                    </div>
+                    
+                    <div class="group">
+                        <input autocomplete="off" id="teamName" class="text-center" type="text" placeholder="Cidade"/>
+                        <div class="bar"></div>
+                        <span id="teamRequire" class="require-text">*insira um nome para o time</span>
+                    </div>
+
+                    <div class="group">
+                        <input autocomplete="off" id="teamName" class="text-center" type="text" placeholder="Data inicio"/>
+                        <div class="bar"></div>
+                        <span id="teamRequire" class="require-text">*insira um nome para o time</span>
+                    </div>
+
+                    <div class="group">
+                        <input autocomplete="off" id="teamName" class="text-center" type="text" placeholder="Data fim"/>
+                        <div class="bar"></div>
+                        <span id="teamRequire" class="require-text">*insira um nome para o time</span>
+                    </div>
+
+                    <div class="col-md-12 text-center" style="margin-top: 20px;">
+                        <button onclick="createTeam()" class="btn btn-primary btn-block btn-lg" >Buscar</button>
+                    </div>
+                    
+                </div>
+            </div>
+    </section>
+
+    <section class="sessao" id="2">
+            <div class="container">
+                <div class="row col-md-8 col-md-offset-2">
+                    
+                    <div class="group">
+                        <input autocomplete="off" class="text-center" type="text" placeholder="Codigo"/>
+                        <div class="bar"></div>
+                    </div>
+
+                    <div class="group">
+                        <input autocomplete="off" class="text-center" type="text" placeholder="Nome"/>
+                        <div class="bar"></div>
+                    </div>
+
+                    <div class="group">
+                        <input autocomplete="off" class="text-center" type="text" placeholder="Tipo"/>
+                        <div class="bar"></div>
+                    </div>
+
+                    <div class="group">
+                        <input autocomplete="off" class="text-center" type="text" placeholder="Estado"/>
+                        <div class="bar"></div>
+                    </div>
+
+                    <div class="group">
+                        <input autocomplete="off" class="text-center" type="text" placeholder="Cidade"/>
+                        <div class="bar"></div>
+                    </div>
+
+                    <div class="group">
+                        <input autocomplete="off" class="text-center" type="text" placeholder="Faixa etária"/>
+                        <div class="bar"></div>
+                    </div>
+
+                    <div class="group">
+                        <input autocomplete="off" class="text-center" type="text" placeholder="Data de inicio"/>
+                        <div class="bar"></div>
+                    </div>
+
+                    <div class="group">
+                        <input autocomplete="off" class="text-center" type="text" placeholder="Data de fim"/>
+                        <div class="bar"></div>
+                    </div>
+
+                    <div class="group">
+                        <input autocomplete="off" class="text-center" type="text" placeholder="APRESENTACAOOO"/>
+                        <div class="bar"></div>
+                    </div>
+
+                    <div class="col-md-12 text-center" style="margin-top: 20px;">
+                        <button onclick="createTeam()" class="btn btn-primary btn-block btn-lg" >Cadastrar</button>
+                    </div>
+                    
+                </div>
+            </div>
+    </section>
+
+    <section class="sessao" id="3">
+            <div class="container">
+                <div class="row col-md-8 col-md-offset-2">
+                    
+                    <div class="group">
+                        <input autocomplete="off" id="teamName" class="text-center" type="text" placeholder="Codigo da apresentacao"/>
+                        <div class="bar"></div>
+                        <span id="teamRequire" class="require-text">*insira um nome para o time</span>
+                    </div>
+                    
+                    <div class="group">
+                        <input autocomplete="off" id="teamName" class="text-center" type="text" placeholder="Quantidade de ingressos"/>
+                        <div class="bar"></div>
+                        <span id="teamRequire" class="require-text">*insira um nome para o time</span>
+                    </div>
+
+                    <div class="col-md-12 text-center" style="margin-top: 20px;">
+                        <button onclick="createTeam()" class="btn btn-primary btn-block btn-lg" >Comprar</button>
+                    </div>
+                    
+                </div>
+            </div>
+    </section>
+
+    <!--scripts loaded here -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/home.js"></script>
+  </body>
+</html>
