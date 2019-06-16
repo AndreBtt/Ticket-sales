@@ -25,6 +25,8 @@ Cada evento possui as seguintes características :
 -   Classe e faixa etária
 -   Estado em que ocorre
 -   Cidade em que ocorre
+-   Data de início
+-   Data de fim
 -   No mínimo **uma** e no máximo **dez** apresentações
 
 Para cada aprensentação exibida em um evento as seguintes caracteristicas são especificadas :
@@ -89,6 +91,7 @@ Uma vez cadastrado o usuário pode :
     -   Estado onde vai ocorrer
     -   Cidade onde vai ocorrer
     -   Classe e faixa etária
+    -   Tipo do evento
     -   Apresentações
         -   Código da apresentação
         -   Data da apresentação
