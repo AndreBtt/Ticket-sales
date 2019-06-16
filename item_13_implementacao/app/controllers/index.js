@@ -128,6 +128,30 @@ exports.ingresso = function(req, res) {
     let codigo = info.codigo
     let quantidade = info.quantidade
 
-    let sql = "SELECT * FROM evento WHERE "
+    con.connect(function(err) {
+        if (err) throw err;
+
+        let sql = "SELECT (ingressos) FROM apresentacao WHERE id = " + codigo
+
+        con.query(sql, function (err, result, fields) {
+            if (err) throw err;
+            if(result == "") {
+                res.end('{"status" : "Nao existe apresentacao com esse codigo"}');
+            } else {
+                let ingressos = result[0].ingressos 
+                if(quantidade > ingressos) {
+                    res.end('{"status" : "A apresentacao nao possui ingressos suficientes"}');
+                } else {
+                    let resultante = ingressos - quantidade
+                    sql = "UPDATE apresentacao SET ingressos = " + resultante + " WHERE id = " + codigo
+                    con.query(sql, function (err, result) {
+                        if (err) throw err;
+                        console.log("ingressos atualizado");
+                        res.end('{"status" : "success"}');
+                    });
+                }
+            }
+        });
+    });
 
 }
