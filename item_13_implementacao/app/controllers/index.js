@@ -24,12 +24,27 @@ exports.buscarEvento = function(req, res) {
     let estado = info.estado
     let cidade = info.cidade
 
-    let sql = "SELECT * FROM evento WHERE "
-    sql += "data_inicio >= '" + data_inicio + "' AND "
-    sql += "data_fim <= '" + data_fim + "' AND "
-    sql += "data_fim <= '" + data_fim + "' AND "
-    sql += "estado = '" + estado + "' AND "
-    sql += "cidade = '" + cidade + "'"
+    let sql = `select 
+        evento.nome as evento_nome,
+        apresentacao.id as codigo_apresentacao,
+        apresentacao.data as data_apresentacao,
+        apresentacao.horario as horario_apresentacao,
+        apresentacao.preco as preco_apresentacao,
+        apresentacao.ingressos as ingressos_apresentacao,
+        apresentacao.sala as sala_apresentacao
+        from
+            evento_apresentacao
+        inner join
+            evento
+        inner join
+            apresentacao
+        where
+            evento.id = evento_apresentacao.evento_id AND
+            apresentacao.id = evento_apresentacao.apresentacao_id AND
+            evento.data_inicio >= '` + data_inicio + `' AND
+            evento.data_fim <= '` + data_fim + `' AND
+            evento.estado = '` + estado + `' AND
+            evento.cidade = '` + cidade + `'`
 
     con.query(sql, function (err, result, fields) {
         if (err) throw err;
@@ -37,7 +52,14 @@ exports.buscarEvento = function(req, res) {
         let data = '{"data" : ['
 
         for(let i = 0; i < result.length; i++) {
-            data += '"' + result[i].nome + '"'
+            data += "{ "
+            data += '"evento_nome": ' + '"' + result[i].evento_nome + '", '
+            data += '"codigo_apresentacao": ' + result[i].codigo_apresentacao + ', '
+            data += '"data_apresentacao": ' + '"' + result[i].data_apresentacao + '", '
+            data += '"horario_apresentacao": ' + result[i].horario_apresentacao + ', '
+            data += '"preco_apresentacao": ' + result[i].preco_apresentacao + ', '
+            data += '"ingressos_apresentacao": ' + result[i].ingressos_apresentacao + ', '
+            data += '"sala_apresentacao": ' + result[i].sala_apresentacao + "}"
             if(i != result.length -1 ) data += ','
         }
         data += ']}'
@@ -70,7 +92,7 @@ exports.criarEvento = function(req, res) {
 
     con.query(sql, function (err, result) {
         if (err) {
-            res.end('{"status" : "fail"}');
+            res.end('{"msg" : "falha ao criar evento"}');
             throw err;
         }
         console.log("evento adicionado");
@@ -93,7 +115,7 @@ exports.criarEvento = function(req, res) {
 
         con.query(sql, function (err, result) {
             if (err) {
-                res.end('{"status" : "fail"}');
+                res.end('{"msg" : "falha ao criar apresentacoes"}');
                 throw err;
             }
 
@@ -113,12 +135,12 @@ exports.criarEvento = function(req, res) {
 
             con.query(sql, function (err, result) {
                 if (err) {
-                    res.end('{"status" : "fail"}');
+                    res.end('{"msg" : "falha interna no banco de dados"}');
                     throw err;
                 }
 
                 console.log("evento_apresentacoes adicionadas");
-                res.end('{"status" : "success"}');
+                res.end('{"msg" : "O seu evento foi criado!"}');
             });
         });
     });

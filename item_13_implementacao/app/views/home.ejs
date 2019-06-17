@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 text-center">
                     <div onclick="display(1)" class="feature">
-                        <img src="" width="70" height="70"/>
+                        <img src="/img/loupe.png" width="70" height="70"/>
                         <h3>Buscar evento</h3>
                         <p class="text-muted">Veja os eventos da sua região</p>
                     </div>
@@ -32,7 +32,7 @@
 
                 <div class="col-lg-4 col-md-4 text-center">
                     <div onclick="display(2)" class="feature">
-                        <img src="" width="70" height="70"/>
+                        <img src="/img/add.png" width="70" height="70"/>
                         <h3>Cadastrar evento</h3>
                         <p class="text-muted">Seja dono do seu próprio evento</p>
                     </div>
@@ -40,7 +40,7 @@
                 
                 <div class="col-lg-4 col-md-4 text-center">
                     <div onclick="display(3)" class="feature">
-                        <img src="" width="70" height="70"/>
+                        <img src="/img/ticket.png" width="70" height="70"/>
                         <h3>Comprar ingresso</h3>
                         <p class="text-muted">Garanta seu ingresso</p>
                     </div>
@@ -168,6 +168,12 @@
             </div>
     </section>
 
+    <section class="sessao" id="4">
+        <div id="listaEventos" class="container">
+            <h2 id="buscaTexto" class="text-center" style="margin-top: 60px;"></h2>
+        </div>
+    </section>
+
     <div id="ingressoFeedBack" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -229,48 +235,44 @@
     </div>
 
     <div id="updateApresentacaoForm" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body" style="color: #282828">
-                        <h2 class="text-center">Apresentação</h2>
-                        <form class="contact-form row">
-                            <div class="col-md-12">
-                                <label></label>
-                                <input id="codUpdateApre" type="text" class="form-control" placeholder="Código">
-                            </div>
-                            <div class="col-md-12">
-                                <label></label>
-                                <input id="dataUpdateApre" type="text" class="form-control" placeholder="Data">
-                            </div>
-                            <div class="col-md-12">
-                                <label></label>
-                                <input id="horarioUpdateApre" type="text" class="form-control" placeholder="Horário">
-                            </div>
-                            <div class="col-md-12">
-                                <label></label>
-                                <input id="precoUpdateApre" type="text" class="form-control" placeholder="Preço">
-                            </div>
-                            <div class="col-md-12">
-                                <label></label>
-                                <input id="qtUpdateApre" type="text" class="form-control" placeholder="Quantidade de ingressos">
-                            </div>
-                            <div class="col-md-12">
-                                <label></label>
-                                <input id="codSalaUpdateApre" type="text" class="form-control" placeholder="Código da sala">
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-xs-6">
-                                <label></label>
-                                <h2 onclick="atualizarApresentacao()" class="text-center butao">Atualizar</h2>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-xs-6">
-                                <label></label>
-                                <h2 onclick="deletarApresentacao()" class="text-center butao">Deletar</h2>
-                            </div>
-                        </form>
-                    </div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" style="color: #282828">
+                    <h2 class="text-center">Apresentação</h2>
+                    <form class="contact-form row">
+                        <div class="col-md-12">
+                            <label></label>
+                            <input id="codUpdateApre" type="text" class="form-control" placeholder="Código" disabled>
+                        </div>
+                        <div class="col-md-12">
+                            <label></label>
+                            <input id="dataUpdateApre" type="text" class="form-control" placeholder="Data" disabled>
+                        </div>
+                        <div class="col-md-12">
+                            <label></label>
+                            <input id="horarioUpdateApre" type="text" class="form-control" placeholder="Horário" disabled>
+                        </div>
+                        <div class="col-md-12">
+                            <label></label>
+                            <input id="precoUpdateApre" type="text" class="form-control" placeholder="Preço" disabled>
+                        </div>
+                        <div class="col-md-12">
+                            <label></label>
+                            <input id="qtUpdateApre" type="text" class="form-control" placeholder="Quantidade de ingressos" disabled>
+                        </div>
+                        <div class="col-md-12">
+                            <label></label>
+                            <input id="codSalaUpdateApre" type="text" class="form-control" placeholder="Código da sala" disabled>
+                        </div>
+                        <!-- <div class="col-md-12 col-lg-12 col-xs-12">
+                            <label></label>
+                            <h2 onclick="deletarApresentacao()" class="text-center butao">Deletar</h2>
+                        </div> -->
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
     <!--scripts loaded here -->
     <script src="/js/jquery.min.js"></script>

@@ -15,7 +15,7 @@ body {
 }
 
 .butao:hover {
-  color: #43b699;
+  color: #337ab7;
 }
 
 #listaApresentacao {
@@ -65,7 +65,7 @@ header .header-content {
   color: white;
   background-color: #282828;
   background-image: none;
-  border-bottom: 1px solid #43b699;
+  border-bottom: 1px solid #337ab7;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   text-align: center;
@@ -85,6 +85,10 @@ header .header-content {
   height: 110px;
   overflow: hidden;
   position: relative;
+}
+
+.groups {
+  margin-top: 6%;
 }
 
 .require-text {
@@ -125,7 +129,7 @@ input:focus ~ .bar:before {
   position: absolute;
   width: 100%;
   height: 150%;
-  background: #43b699;
+  background: #337ab7;
   transform: translateX(-100%);
 }
 
@@ -136,8 +140,28 @@ input:focus ~ .bar:before {
 }
 
 .feature:hover {
-  color: #43b699;
+  color: #337ab7;
   cursor: pointer;
+}
+
+.ranking {
+  border-bottom: 1px solid #DDD;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.ranking-header {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  border-width: 0;
+  border-style: solid;
+  border-color: #ddd;
+  color: #999;
+  font-size: 15px;
+  text-transform: uppercase;
 }
 
 @media(min-width:1000px) {
