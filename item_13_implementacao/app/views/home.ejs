@@ -52,8 +52,9 @@
 
     <a id="ingressoFeedBackModal" data-toggle="modal" href="#ingressoFeedBack" style="display: none;"></a>
     <a id="buscaFeedBackModal" data-toggle="modal" href="#buscaFeedBack" style="display: none;"></a>
-    <a id="apresentacaoFormModal" data-toggle="modal" href="#apresentacaoForm" style="display: none;">Adicionar Apresentação</a>
-
+    <a id="apresentacaoFormModal" data-toggle="modal" href="#apresentacaoForm" style="display: none;"></a>
+    <a id="updateApresentacaoFormModal" data-toggle="modal" href="#updateApresentacaoForm" style="display: none;"></a>
+    
     <section class="sessao" id="1">
             <div class="container">
                 <div class="row col-md-8 col-md-offset-2">
@@ -91,42 +92,42 @@
                 <div class="row col-md-8 col-md-offset-2">
                     
                     <div class="group">
-                        <input autocomplete="off" class="text-center" type="text" placeholder="Codigo"/>
+                        <input id="codEvento" autocomplete="off" class="text-center" type="text" placeholder="Codigo"/>
                         <div class="bar"></div>
                     </div>
 
                     <div class="group">
-                        <input autocomplete="off" class="text-center" type="text" placeholder="Nome"/>
+                        <input id="nomeEvento" autocomplete="off" class="text-center" type="text" placeholder="Nome"/>
                         <div class="bar"></div>
                     </div>
 
                     <div class="group">
-                        <input autocomplete="off" class="text-center" type="text" placeholder="Tipo"/>
+                        <input id="tipoEvento" autocomplete="off" class="text-center" type="text" placeholder="Tipo"/>
                         <div class="bar"></div>
                     </div>
 
                     <div class="group">
-                        <input autocomplete="off" class="text-center" type="text" placeholder="Estado"/>
+                        <input id="estadoEvento" autocomplete="off" class="text-center" type="text" placeholder="Estado"/>
                         <div class="bar"></div>
                     </div>
 
                     <div class="group">
-                        <input autocomplete="off" class="text-center" type="text" placeholder="Cidade"/>
+                        <input id="cidadeEvento" autocomplete="off" class="text-center" type="text" placeholder="Cidade"/>
                         <div class="bar"></div>
                     </div>
 
                     <div class="group">
-                        <input autocomplete="off" class="text-center" type="text" placeholder="Faixa etária"/>
+                        <input id="classeEvento" autocomplete="off" class="text-center" type="text" placeholder="Faixa etária"/>
                         <div class="bar"></div>
                     </div>
 
                     <div class="group">
-                        <input autocomplete="off" class="text-center" type="text" placeholder="Data de inicio"/>
+                        <input id="inicioEvento" autocomplete="off" class="text-center" type="text" placeholder="Data de inicio"/>
                         <div class="bar"></div>
                     </div>
 
                     <div class="group">
-                        <input autocomplete="off" class="text-center" type="text" placeholder="Data de fim"/>
+                        <input id="fimEvento" autocomplete="off" class="text-center" type="text" placeholder="Data de fim"/>
                         <div class="bar"></div>
                     </div>
 
@@ -219,13 +220,57 @@
                         </div>
                         <div class="col-md-12 col-lg-12 col-xs-12">
                             <label></label>
-                            <h2 onclick="criarApresentacao()" class="text-center">Criar</h2>
+                            <h2 onclick="criarApresentacao()" class="text-center butao">Criar</h2>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="updateApresentacaoForm" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body" style="color: #282828">
+                        <h2 class="text-center">Apresentação</h2>
+                        <form class="contact-form row">
+                            <div class="col-md-12">
+                                <label></label>
+                                <input id="codUpdateApre" type="text" class="form-control" placeholder="Código">
+                            </div>
+                            <div class="col-md-12">
+                                <label></label>
+                                <input id="dataUpdateApre" type="text" class="form-control" placeholder="Data">
+                            </div>
+                            <div class="col-md-12">
+                                <label></label>
+                                <input id="horarioUpdateApre" type="text" class="form-control" placeholder="Horário">
+                            </div>
+                            <div class="col-md-12">
+                                <label></label>
+                                <input id="precoUpdateApre" type="text" class="form-control" placeholder="Preço">
+                            </div>
+                            <div class="col-md-12">
+                                <label></label>
+                                <input id="qtUpdateApre" type="text" class="form-control" placeholder="Quantidade de ingressos">
+                            </div>
+                            <div class="col-md-12">
+                                <label></label>
+                                <input id="codSalaUpdateApre" type="text" class="form-control" placeholder="Código da sala">
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xs-6">
+                                <label></label>
+                                <h2 onclick="atualizarApresentacao()" class="text-center butao">Atualizar</h2>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xs-6">
+                                <label></label>
+                                <h2 onclick="deletarApresentacao()" class="text-center butao">Deletar</h2>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <!--scripts loaded here -->
     <script src="/js/jquery.min.js"></script>

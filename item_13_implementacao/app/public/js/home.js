@@ -1,4 +1,5 @@
 let apresentacaoID = 1
+let apresentacoes = {}
 
 $(document).ready(function() {
 })
@@ -92,21 +93,86 @@ function novaApresentacao() {
 }
 
 function criarApresentacao() {
-    let cod = $("#codApre").text().trim()
-    let data = $("#dataApre").text().trim()
-    let horario = $("#horarioApre").text().trim()
-    let preco = $("#precoApre").text().trim()
-    let qt = $("#qtApre").text().trim()
-    let codSala = $("#codSalaApre").text().trim()
+    let cod = $("#codApre").val().trim()
+    let data = $("#dataApre").val().trim()
+    let horario = $("#horarioApre").val().trim()
+    let preco = $("#precoApre").val().trim()
+    let qt = $("#qtApre").val().trim()
+    let codSala = $("#codSalaApre").val().trim()
 
-    // criar a apresentacao, add num mapa, incrementa o ID
+    apresentacoes[apresentacaoID] = {}
+    apresentacoes[apresentacaoID].cod = cod
+    apresentacoes[apresentacaoID].data = data
+    apresentacoes[apresentacaoID].horario = horario
+    apresentacoes[apresentacaoID].preco = preco
+    apresentacoes[apresentacaoID].qt = qt
+    apresentacoes[apresentacaoID].codSala = codSala
+    apresentacoes[apresentacaoID].valido = true
 
     var div = document.createElement("div")
+    div.id = "Apresentacao" + apresentacaoID
     div.innerHTML = "Apresentacao " + apresentacaoID
     div.setAttribute("onclick", "updateAprensetacao(" + apresentacaoID + ")")
+    div.classList.add("butao")
     document.getElementById("listaApresentacao").appendChild(div)
+    document.getElementById('apresentacaoFormModal').click();
+
+    apresentacaoID++
 }
 
 function updateAprensetacao(id) {
-    console.log(id)
+    $("#codUpdateApre").val(apresentacoes[id].cod)
+    $("#dataUpdateApre").val(apresentacoes[id].data)
+    $("#horarioUpdateApre").val(apresentacoes[id].horario)
+    $("#precoUpdateApre").val(apresentacoes[id].preco)
+    $("#qtUpdateApre").val(apresentacoes[id].qt)
+    $("#codSalaUpdateApre").val(apresentacoes[id].codSala)
+
+    document.getElementById('updateApresentacaoFormModal').click();
+}
+
+function cadastrarEvento() {
+    let codEvento = $("#codEvento").val().trim()
+    let nomeEvento = $("#nomeEvento").val().trim()
+    let tipoEvento = $("#tipoEvento").val().trim()
+    let estadoEvento = $("#estadoEvento").val().trim()
+    let cidadeEvento = $("#cidadeEvento").val().trim()
+    let classeEvento = $("#classeEvento").val().trim()
+    let inicioEvento = $("#inicioEvento").val().trim()
+    let fimEvento = $("#fimEvento").val().trim()
+
+    let obj = {}
+
+    obj.codigo = codEvento
+    obj.nome = nomeEvento
+    obj.estado = estadoEvento
+    obj.cidade = cidadeEvento
+    obj.classe = classeEvento
+    obj.tipo = tipoEvento
+    obj.data_inicio = inicioEvento
+    obj.data_fim = fimEvento
+    obj.apresentacoes = []
+
+    for(let i = 1; i < apresentacaoID; i++) {
+        if(apresentacoes[i].valido == true) {
+            let apObj = {}
+            apObj.codigo = apresentacoes[i].cod
+            apObj.data = apresentacoes[i].data
+            apObj.horario = apresentacoes[i].horario
+            apObj.preco = apresentacoes[i].preco
+            apObj.ingressos = apresentacoes[i].qt
+            apObj.sala = apresentacoes[i].codSala
+            obj.apresentacoes.push(apObj)
+        }
+    }
+
+    $.ajax({
+        url: '/criarEvento',
+        type: 'POST',
+        data: obj,
+        success: function(result) {
+            let response = JSON.parse(result)
+        }
+    });
+
 }

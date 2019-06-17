@@ -75,10 +75,11 @@ exports.criarEvento = function(req, res) {
         }
         console.log("evento adicionado");
 
-        sql = "INSERT INTO apresentacao (id, data, horario, preco, ingressos, sala) VALUES ("
+        sql = "INSERT INTO apresentacao (id, data, horario, preco, ingressos, sala) VALUES "
 
         for(let i = 0; i < apresentacoes.length; i++) {
             let ap = apresentacoes[i]
+            sql += "("
             sql += ap.codigo + ", "
             sql += "'" + ap.data + "', "
             sql += "'" + ap.horario + "', "
@@ -98,10 +99,11 @@ exports.criarEvento = function(req, res) {
 
             console.log("apresentacoes adicionadas");
 
-            sql = "INSERT INTO evento_apresentacao (evento_id, apresentacao_id) VALUES ("
+            sql = "INSERT INTO evento_apresentacao (evento_id, apresentacao_id) VALUES "
 
             for(let i = 0; i < apresentacoes.length; i++) {
                 let ap = apresentacoes[i]
+                sql += "("
                 sql += codigo + ", "
                 sql += ap.codigo + ")"
                 if(i != apresentacoes.length - 1) {

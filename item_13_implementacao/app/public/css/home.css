@@ -10,6 +10,14 @@ body {
   color: #d3d3d3;
 }
 
+.butao {
+  cursor: pointer;
+}
+
+.butao:hover {
+  color: #43b699;
+}
+
 #listaApresentacao {
   margin-top: 30px;
   margin-bottom: 30px;
