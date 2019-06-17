@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Computsal</title>
+    <title>Ticket</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/animate.min.css" />
@@ -49,6 +49,10 @@
             </div>
         </div>
     </section>
+
+    <a id="ingressoFeedBackModal" data-toggle="modal" href="#ingressoFeedBack" style="display: none;"></a>
+    <a id="buscaFeedBackModal" data-toggle="modal" href="#buscaFeedBack" style="display: none;"></a>
+    <a id="apresentacaoFormModal" data-toggle="modal" href="#apresentacaoForm" style="display: none;">Adicionar Apresentação</a>
 
     <section class="sessao" id="1">
             <div class="container">
@@ -126,13 +130,15 @@
                         <div class="bar"></div>
                     </div>
 
-                    <div class="group">
-                        <input autocomplete="off" class="text-center" type="text" placeholder="APRESENTACAOOO"/>
-                        <div class="bar"></div>
+                    <div id="listaApresentacao">
+                    </div>
+
+                    <div id="nApresentacao" class="col-md-12 text-center">
+                        <button type="button" onclick="novaApresentacao()" class="btn btn-primary btn-lg"> Criar apresentação </button>
                     </div>
 
                     <div class="col-md-12 text-center" style="margin-top: 20px;">
-                        <button onclick="createTeam()" class="btn btn-primary btn-block btn-lg" >Cadastrar</button>
+                        <button onclick="cadastrarEvento()" class="btn btn-primary btn-block btn-lg" >Cadastrar</button>
                     </div>
                     
                 </div>
@@ -144,33 +150,82 @@
                 <div class="row col-md-8 col-md-offset-2">
                     
                     <div class="group">
-                        <input autocomplete="off" id="teamName" class="text-center" type="text" placeholder="Codigo da apresentacao"/>
+                        <input autocomplete="off" id="codIngresso" class="text-center" type="text" placeholder="Codigo da apresentacao"/>
                         <div class="bar"></div>
-                        <span id="teamRequire" class="require-text">*insira um nome para o time</span>
                     </div>
                     
                     <div class="group">
-                        <input autocomplete="off" id="teamName" class="text-center" type="text" placeholder="Quantidade de ingressos"/>
+                        <input autocomplete="off" id="qtIngresso" class="text-center" type="text" placeholder="Quantidade de ingressos"/>
                         <div class="bar"></div>
-                        <span id="teamRequire" class="require-text">*insira um nome para o time</span>
                     </div>
 
                     <div class="col-md-12 text-center" style="margin-top: 20px;">
-                        <button onclick="createTeam()" class="btn btn-primary btn-block btn-lg" >Comprar</button>
+                        <button onclick="comprarIngresso()" class="btn btn-primary btn-block btn-lg" >Comprar</button>
                     </div>
                     
                 </div>
             </div>
     </section>
 
-    <section class="sessaao" id="4">
-        <div class="container">
-            <div class="row col-md-12">
-                    <ul id="listaEventos" class="text-center" style="list-style-type:none;">
-                    </ul>
+    <div id="ingressoFeedBack" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h2 id="texto_modal" class="text-center" style="color: #282828"></h2>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <div id="buscaFeedBack" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="eventos" class="modal-body">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="apresentacaoForm" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" style="color: #282828">
+                    <h2 class="text-center">Apresentação</h2>
+                    <form class="contact-form row">
+                        <div class="col-md-12">
+                            <label></label>
+                            <input id="codApre" type="text" class="form-control" placeholder="Código">
+                        </div>
+                        <div class="col-md-12">
+                            <label></label>
+                            <input id="dataApre" type="text" class="form-control" placeholder="Data">
+                        </div>
+                        <div class="col-md-12">
+                            <label></label>
+                            <input id="horarioApre" type="text" class="form-control" placeholder="Horário">
+                        </div>
+                        <div class="col-md-12">
+                            <label></label>
+                            <input id="precoApre" type="text" class="form-control" placeholder="Preço">
+                        </div>
+                        <div class="col-md-12">
+                            <label></label>
+                            <input id="qtApre" type="text" class="form-control" placeholder="Quantidade de ingressos">
+                        </div>
+                        <div class="col-md-12">
+                            <label></label>
+                            <input id="codSalaApre" type="text" class="form-control" placeholder="Código da sala">
+                        </div>
+                        <div class="col-md-12 col-lg-12 col-xs-12">
+                            <label></label>
+                            <h2 onclick="criarApresentacao()" class="text-center">Criar</h2>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--scripts loaded here -->
     <script src="/js/jquery.min.js"></script>

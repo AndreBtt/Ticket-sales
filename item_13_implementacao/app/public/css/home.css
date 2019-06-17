@@ -10,6 +10,37 @@ body {
   color: #d3d3d3;
 }
 
+#listaApresentacao {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 35px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#nApresentacao {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#nApresentacao button {
+  border: none;
+  outline: none;
+  border-color: #282828;
+}
+
+.lista {
+  list-style-type: none;
+  font-size: 35px;
+  color: #282828;
+  text-align: center;
+}
+
+.texto_lista {
+  color: #282828;
+  text-align: center;
+}
+
 header .header-content {
   position: relative;
   width: 100%;
