@@ -290,10 +290,19 @@ function cadastrarEvento() {
         type: 'POST',
         data: obj,
         success: function(result) {
-            let response = JSON.parse(result)
-            document.getElementById('texto_modal').innerHTML = response.msg
-            document.getElementById('ingressoFeedBackModal').click();
+            // let response = JSON.parse(result)
         }
     });
 
+    document.getElementById('texto_modal').innerHTML = "Evento criado com sucesso!"
+    document.getElementById('ingressoFeedBackModal').click();
+    display(2)
+    $("#codEvento").val("")
+    $("#nomeEvento").val("")
+    $("#tipoEvento").val("")
+    $("#estadoEvento").val("")
+    $("#cidadeEvento").val("")
+    $("#classeEvento").val("")
+    $("#inicioEvento").val("")
+    $("#fimEvento").val("")
 }

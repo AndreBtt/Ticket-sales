@@ -1,6 +1,7 @@
-var mysql = require('mysql');
+let mysql = require('mysql');
+let Evento = require('../model/evento');
 
-var con = mysql.createConnection({
+let con = mysql.createConnection({
     host: '127.0.0.1',
     port: '3306',
     user: "root",
@@ -69,81 +70,8 @@ exports.buscarEvento = function(req, res) {
 
 exports.criarEvento = function(req, res) {
     let info = req.body
-
-    let codigo = info.codigo
-    let nome = info.nome
-    let estado = info.estado
-    let cidade = info.cidade
-    let classe = info.classe
-    let tipo = info.tipo
-    let data_inicio = info.data_inicio
-    let data_fim = info.data_fim
-    let apresentacoes = info.apresentacoes
-
-    let sql = "INSERT INTO evento (id, nome, tipo, classe, estado, cidade, data_inicio, data_fim) VALUES ("
-    sql += codigo + ", "
-    sql += "'" + nome + "', "
-    sql += "'" + tipo + "', "
-    sql += classe + ", "
-    sql += "'" + estado + "', "
-    sql += "'" + cidade + "', "
-    sql += "'" + data_inicio + "', "
-    sql += "'" + data_fim + "')"
-
-    con.query(sql, function (err, result) {
-        if (err) {
-            res.end('{"msg" : "falha ao criar evento"}');
-            throw err;
-        }
-        console.log("evento adicionado");
-
-        sql = "INSERT INTO apresentacao (id, data, horario, preco, ingressos, sala) VALUES "
-
-        for(let i = 0; i < apresentacoes.length; i++) {
-            let ap = apresentacoes[i]
-            sql += "("
-            sql += ap.codigo + ", "
-            sql += "'" + ap.data + "', "
-            sql += "'" + ap.horario + "', "
-            sql += ap.preco + ", "
-            sql += ap.ingressos + ", "
-            sql += ap.sala + ")"
-            if(i != apresentacoes.length - 1) {
-                sql += ", "
-            }
-        }
-
-        con.query(sql, function (err, result) {
-            if (err) {
-                res.end('{"msg" : "falha ao criar apresentacoes"}');
-                throw err;
-            }
-
-            console.log("apresentacoes adicionadas");
-
-            sql = "INSERT INTO evento_apresentacao (evento_id, apresentacao_id) VALUES "
-
-            for(let i = 0; i < apresentacoes.length; i++) {
-                let ap = apresentacoes[i]
-                sql += "("
-                sql += codigo + ", "
-                sql += ap.codigo + ")"
-                if(i != apresentacoes.length - 1) {
-                    sql += ", "
-                }
-            }
-
-            con.query(sql, function (err, result) {
-                if (err) {
-                    res.end('{"msg" : "falha interna no banco de dados"}');
-                    throw err;
-                }
-
-                console.log("evento_apresentacoes adicionadas");
-                res.end('{"msg" : "O seu evento foi criado!"}');
-            });
-        });
-    });
+    let evento = new Evento(info.codigo, info.nome, info.estado, info.cidade, info.classe, info.tipo, info.data_inicio, info.data_fim, info.apresentacoes)
+    evento.adicionar_evento()
 }
 
 exports.comprarIngresso = function(req, res) {

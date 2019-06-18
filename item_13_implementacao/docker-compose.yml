@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  db:
+    build: ./dataBase
+    ports:
+      - "3306:3306"
+    network_mode: "host"
+    
+  web:
+    build: ./app
+    ports:
+      - "8080:8080"
+    network_mode: "host"
+  
+  

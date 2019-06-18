@@ -4,9 +4,9 @@ test('(Unitário) Usuário', (t) => {
 
     var usu = new usuario("Thiago Veras", "012.345.678-20", "coxinha13", "1234.5678.0123.1452", "451", "12-2032")
 
-    usu.nome = "André Luis"
+    usu.nome = "André Luiz"
 
-    t.assert(usu.nome === "André Luis", "Nome correto")
+    t.assert(usu.nome === "André Luiz", "Nome correto")
     t.assert(usu.cpf === "012.345.678-20", "CPF correto")
     t.assert(usu.senha === "coxinha13", "Senha correta")
     t.assert(usu.nCartao === "1234.5678.0123.1452", "Número de cartão correto")
